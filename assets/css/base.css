@@ -99,6 +99,10 @@ body {
   border: 2px solid;
 }
 
+/* HomePage */
+.xp-red {
+  color: var(--brand-700);
+}
 .card-kpi {
   border: 0;
   border-radius: var(--radius);
