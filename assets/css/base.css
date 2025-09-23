@@ -1,52 +1,163 @@
-
-:root{
-  --brand:#D12E2E;
-  --brand-700:#B21F1F;
-  --accent:#FFC83D;
-  --surface:#FFFFFF;
-  --surface-2:#F7F7F7;
-  --text:#222222;
-  --muted:#6B7280;
-  --success:#21A558;
-  --warning:#F59E0B;
-  --radius:18px;
-  --shadow:0 6px 16px rgba(0,0,0,.08);
+:root {
+  --brand: #d73240;
+  --brand-700: #971414d2;
+  --accent: #ffc83d;
+  --surface: #ffffff;
+  --surface-2: #f8eded;
+  --text: #222222;
+  --muted: #6b7280;
+  --success: #21a558;
+  --warning: #f59e0b;
+  --radius-xl: 18px;
+  --shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
-  background:#FAFAFA;
-  color:var(--text);
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  background: #fafafa;
+  color: var(--text);
 }
 
-.brand-bg{background:var(--brand)!important;color:#fff}
-.brand-text{color:var(--brand)!important}
-.accent{color:var(--accent)}
-.rounded-xl{border-radius:var(--radius)!important}
-.shadow-soft{box-shadow:var(--shadow)}
-.card-kpi{border:0;border-radius:var(--radius);box-shadow:var(--shadow)}
-.card-kpi .card-header{background:transparent;border-bottom:0}
-.badge-soft{background:rgba(209,46,46,.08);color:var(--brand);border:1px solid rgba(209,46,46,.2)}
+/*Font Classes*/
 
-.progress{height:.6rem;border-radius:999px}
-.table thead th{font-weight:600;color:#6b7280}
-.table td, .table th{vertical-align:middle}
-
-.btn-ghost{background:#fff;border:1px solid #e5e7eb;color:#111827}
-.btn-ghost:hover{border-color:#cbd5e1;background:#f8fafc}
-
-header.navbar{box-shadow:var(--shadow)}
-
-.skeleton{background:linear-gradient(90deg,#eee 25%,#f5f5f5 37%,#eee 63%);background-size:400% 100%;animation:sheen 1.4s ease infinite;border-radius:12px}
-@keyframes sheen {0%{background-position:100% 0}100%{background-position:-100% 0}}
-
-@media (max-width: 575.98px){
-  .hide-sm{display:none!important}
+.barlow-condensed-medium {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
-a.skip-link{
-  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+.barlow-condensed-bold {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
-a.skip-link:focus{position:static;width:auto;height:auto;background:#000;color:#fff;padding:.5rem 1rem;border-radius:8px}
+
+.nunito-regular {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nunito-bold {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.brand-bg {
+  background: var(--brand) !important;
+  color: #fff;
+}
+.brand-text {
+  color: var(--brand) !important;
+}
+.accent {
+  color: var(--accent);
+}
+.rounded-xl {
+  border-radius: var(--radius-xl) !important;
+}
+.shadow-soft {
+  box-shadow: var(--shadow);
+}
+
+/*Login Page*/
+
+#login-page {
+  background-color: var(--brand);
+}
+.custom-input {
+  transition: all 0.3s ease-in;
+}
+.custom-input:focus {
+  outline: none;
+  box-shadow: none;
+  border: 3px solid var(--brand-700);
+}
+#forgot-password {
+  color: var(--surface-2);
+  transition: all 0.3s ease;
+}
+#forgot-password:hover {
+  color: #f8eded7b;
+}
+.btn-login {
+  background-color: var(--surface-2);
+  transition: all 0.3s ease;
+}
+.btn-login:hover {
+  border-color: var(--surface-2);
+  border: 2px solid;
+}
+
+.card-kpi {
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.card-kpi .card-header {
+  background: transparent;
+  border-bottom: 0;
+}
+.badge-soft {
+  background: rgba(209, 46, 46, 0.08);
+  color: var(--brand);
+  border: 1px solid rgba(209, 46, 46, 0.2);
+}
+
+.progress {
+  height: 0.6rem;
+  border-radius: 999px;
+}
+.table thead th {
+  font-weight: 600;
+  color: #6b7280;
+}
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.btn-ghost {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  color: #111827;
+}
+.btn-ghost:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+header.navbar {
+  box-shadow: var(--shadow);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #eee 25%, #f5f5f5 37%, #eee 63%);
+  background-size: 400% 100%;
+  animation: sheen 1.4s ease infinite;
+  border-radius: 12px;
+}
+@keyframes sheen {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hide-sm {
+    display: none !important;
+  }
+}
