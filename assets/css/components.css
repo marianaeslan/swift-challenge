@@ -1,14 +1,30 @@
-
-/* components overrides for Bootstrap look-alike */
-.card-hero{
-  background:var(--brand);
-  color:#fff;
-  border-radius:var(--radius);
-  box-shadow:var(--shadow);
+.card-hero {
+  background: var(--brand);
+  color: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
-.card-hero .progress{background:rgba(255,255,255,.3)}
-.card-hero .progress-bar{background:#fff}
-.kebab{border:0;background:transparent}
-.rank-list{list-style:none;padding:0;margin:0}
-.rank-list li{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px dashed #eee}
-.rank-list li:last-child{border-bottom:0}
+.card-hero .progress {
+  background: rgb(237, 236, 236);
+}
+.card-hero .progress-bar {
+  background: #30c870;
+}
+.kebab {
+  border: 0;
+  background: transparent;
+}
+.rank-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.rank-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #eee;
+}
+.rank-list li:last-child {
+  border-bottom: 0;
+}

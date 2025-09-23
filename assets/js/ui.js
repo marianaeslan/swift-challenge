@@ -4,12 +4,15 @@
     t.innerHTML = html.trim();
     return t.content.firstChild;
   }
-  function progress(pct, cls = "") {
-    return `<div class="progress ${cls}"><div class="progress-bar" role="progressbar" style="width:${
-      pct * 100
-    }%" aria-valuenow="${
-      pct * 100
-    }" aria-valuemin="0" aria-valuemax="100"></div></div>`;
+  function progress(pct) {
+    return `<div class="progress">
+              <div class="progress-bar" role="progressbar" 
+                   style="width:${pct * 100}%" 
+                   aria-valuenow="${pct * 100}" 
+                   aria-valuemin="0" 
+                   aria-valuemax="100">
+              </div>
+            </div>`;
   }
   function badgePill(text, type = "success") {
     return `<span class="badge text-bg-${type}">${text}</span>`;
@@ -18,17 +21,20 @@
   window.UI = {
     renderHeroCampaign(container, data) {
       container.innerHTML = `
-        <div class="card-hero p-4 rounded-xl">
-          <div class="d-flex justify-content-between align-items-start mb-2">
-            <div class="h5 m-0">Campanha do mês</div>
-            <button class="kebab text-white" aria-label="Opções"><i class="bi bi-gear"></i></button>
+        <div class="card-hero p-4 rounded-xl h-100">
+          <div class="h3 m-0 mb-3 text-uppercase barlow-condensed-bold">${
+            data.month
+          }</div>
+          <hr class="mb-4">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="h6 mb-0">Seu progresso</div>
+            <div class="fw-bold">${data.progress}xp</div>
           </div>
-          <div class="small opacity-75 mb-1">${data.month}</div>
-          <div class="mb-2">Seu progresso</div>
-          ${progress(data.progress / data.goal, "bg-white")}
-          <div class="d-flex justify-content-between small mt-2">
-            <span>${data.progress}xp</span>
-            <span>Meta: ${data.goal.toLocaleString("pt-BR")}xp</span>
+          ${progress(data.progress / data.goal)}
+          <div class="mt-3 text-center">
+            <span class="small">A meta de xp do mês é de <strong>${data.goal.toLocaleString(
+              "pt-BR"
+            )}xp</strong></span>
           </div>
         </div>`;
     },

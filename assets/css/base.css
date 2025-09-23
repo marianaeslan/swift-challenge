@@ -6,6 +6,7 @@
   --surface-2: #f8eded;
   --text: #222222;
   --muted: #6b7280;
+  --progress: #30c870;
   --success: #21a558;
   --warning: #f59e0b;
   --radius-xl: 18px;
@@ -100,9 +101,19 @@ body {
 }
 
 /* HomePage */
+
 .xp-red {
-  color: var(--brand-700);
+  color: var(--brand) !important;
 }
+
+.progress-bar {
+  background-color: var(--progress);
+}
+
+.progress-custom {
+  background-color: #ebebeb;
+}
+
 .card-kpi {
   border: 0;
   border-radius: var(--radius);
