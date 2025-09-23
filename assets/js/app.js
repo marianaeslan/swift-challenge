@@ -1,4 +1,3 @@
-// Per-page initialization based on body[data-page]
 document.addEventListener("DOMContentLoaded", function () {
   const page = document.body.dataset.page || "";
   if (page === "colab-home") {
