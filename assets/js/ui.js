@@ -22,9 +22,8 @@
     renderHeroCampaign(container, data) {
       container.innerHTML = `
         <div class="card-hero p-4 rounded-xl h-100">
-          <div class="h3 m-0 mb-3 text-uppercase barlow-condensed-bold">${
-            data.month
-          }</div>
+          <div class="h3 m-0 mb-3 text-uppercase barlow-condensed-bold">${data.month
+        }</div>
           <hr class="mb-4">
           <div class="d-flex justify-content-between align-items-center mb-3">
             <div class="h6 mb-0">Seu progresso</div>
@@ -33,26 +32,42 @@
           ${progress(data.progress / data.goal)}
           <div class="mt-3 text-center">
             <span class="small">A meta de xp do mês é de <strong>${data.goal.toLocaleString(
-              "pt-BR"
-            )}xp</strong></span>
+          "pt-BR"
+        )}xp</strong></span>
           </div>
         </div>`;
     },
     renderBadges(row, items) {
       row.innerHTML = items
         .map((b) => {
-          if (b.unlocked) {
-            return `<div class="col-12 col-md-4"><div class="card card-kpi"><div class="card-body"><div class="h6 mb-2">Badge desbloqueado</div><div class="text-muted">Parabéns! 🎉</div></div></div></div>`;
-          } else {
-            const pct = Math.round((b.progress || 0) * 100);
-            return `<div class="col-12 col-md-4"><div class="card card-kpi"><div class="card-body"><div class="h6 mb-2">${
-              b.title
-            }</div>${progress(
-              b.progress || 0
-            )}<div class="small text-muted mt-2">Faltam ${
-              100 - pct
-            }% para este badge</div></div></div></div>`;
-          }
+          const pct = Math.round((b.progress || 0) * 100);
+          return `
+          <div class="col-12 col-md-4 mb-3">
+            <div class="card card-kpi" style="height: 250px; border-radius: 16px;">
+              <div class="card-body d-flex align-items-center" style="gap: 16px; flex-direction: column; justify-content: space-around">
+                <img src="${b.img}" alt="Badge" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
+                <div> 
+                <div style="text-align: center; margin-bottom: 0px" class="h6 mb-1">${b.title || 'Badge desbloqueado'}</div>
+                  <div style="text-align: center; margin-top: 0px" class="h5 mb-1">${b.title2 || ''}</div> 
+                </div>
+                 
+                  
+                 ${
+                !b.unlocked
+                  ? ` 
+                  
+                    <div class="w-100 mt-2">
+                    <div class="text-muted small mb-1">Falta ${100 - pct}% para este badge.</div>
+                      <div class="progress" style="height: 6px;">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: ${pct}%;" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>`
+                  : ''
+              }
+
+              </div>
+            </div>
+          </div>`;
         })
         .join("");
     },
@@ -70,9 +85,8 @@
           (r) => `<tr>
         <td>${r.date}</td>
         <td class="truncate">${r.product}</td>
-        <td class="text-center"><input class="form-check-input" type="checkbox" ${
-          r.cross ? "checked" : ""
-        } disabled></td>
+        <td class="text-center"><input class="form-check-input" type="checkbox" ${r.cross ? "checked" : ""
+            } disabled></td>
         <td class="text-success">${r.xp}xp</td>
       </tr>`
         )
@@ -85,10 +99,8 @@
             `<div class="col"><div class="card card-kpi"><div class="card-body d-flex align-items-center gap-2">${badgePill(
               "Ativa",
               "success"
-            )}<span class="fw-semibold">${
-              r.title
-            }</span><span class="ms-auto small text-muted">Até: ${
-              r.due
+            )}<span class="fw-semibold">${r.title
+            }</span><span class="ms-auto small text-muted">Até: ${r.due
             }</span></div></div></div>`
         )
         .join("");
@@ -107,9 +119,8 @@
           if (r.reached) {
             return `<div class="card card-kpi mb-3"><div class="card-body d-flex justify-content-between align-items-center"><div class="fw-bold">Desconto especial na loja</div><span class="badge text-bg-danger">Meta atingida</span></div></div>`;
           }
-          return `<div class="card card-kpi mb-3"><div class="card-body"><div class="fw-bold mb-2">${
-            r.title
-          }</div>${progress(r.progress || 0)}</div></div>`;
+          return `<div class="card card-kpi mb-3"><div class="card-body"><div class="fw-bold mb-2">${r.title
+            }</div>${progress(r.progress || 0)}</div></div>`;
         })
         .join("");
     },

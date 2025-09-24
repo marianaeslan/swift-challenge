@@ -1,28 +1,36 @@
-<nav class="navbar navbar-expand-lg bg-white">
+<nav class="navbar navbar-expand-lg" style="background: var(--brand);">
   <div class="container">
-    <a class="navbar-brand fw-bold brand-text" href="#">Swift</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#nav"
-    >
+    <a class="navbar-brand fw-bold brand-text" style="color: white !important;" href="#">
+      <img src="../assets/images/logo-swift.svg" alt=""style="max-height:20px">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item">
-          <a class="nav-link" href="colab-home.html">Home</a>
+          <a class="nav-link" style="color: white; text-decoration: underline;" href="colab-home.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="colab-vendas.html">Minhas vendas</a>
+          <a class="nav-link" style="color: white; text-decoration: underline;" href="colab-vendas.html">Minhas vendas</a>
         </li>
-        <li class="nav-item ms-lg-3">
-          <span class="badge badge-soft rounded-pill px-3 py-2"
-            >Olá, <span id="welcomeName">Usuário</span></span
-          >
+        <li id="badgeContainer" class="nav-item ms-lg-3">
+          <span class="badge badge-soft rounded-pill p-0">
+            <img src="https://i.pravatar.cc/80?u=" alt="Foto do Usuário"
+              style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #fff; object-fit: cover;">
+          </span>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+<Style>
+  #badgeContainer {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  #badgeContainer:hover {
+    transform: scale(1.05);
+  }
+</Style>
