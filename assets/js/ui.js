@@ -40,7 +40,7 @@
           const pct = Math.round((b.progress || 0) * 100);
           return `
           <div class="col-12 col-md-4 mb-3">
-            <div class="card card-kpi" style="height: 250px; border-radius: 16px;">
+            <div class="card card-kpi p-2" style="height: 250px; border-radius: 16px;">
               <div class="card-body d-flex align-items-center" style="gap: 16px; flex-direction: column; justify-content: space-between">
                 <img src="${
                   b.img
@@ -137,11 +137,25 @@
       container.innerHTML = list
         .map((r) => {
           if (r.reached) {
-            return `<div class="card card-kpi mb-3"><div class="card-body d-flex justify-content-between align-items-center"><div class="fw-bold">Desconto especial na loja</div><span class="badge text-bg-danger">Meta atingida</span></div></div>`;
+            return `
+            <div class="card red-border mb-3 mt-2 rounded-xl p-3">
+              <div class="card-body d-flex justify-content-between align-items-center">
+                <div class="barlow-condensed-bold text-uppercase p-reached">
+                  Desconto especial na loja
+                </div>
+                  <span class="badge p-2 text-bg-danger">Meta atingida</span>
+                </div>
+            </div>`;
           }
-          return `<div class="card card-kpi mb-3"><div class="card-body"><div class="fw-bold mb-2">${
-            r.title
-          }</div>${progress(r.progress || 0)}</div></div>`;
+          return `
+          <div class="card card-kpi mb-3 mt-2 p-2 rounded-xl bg-red-brand text">
+            <div class="card-body">
+              <div class="fw-bold mb-2 d-flex justify-content-between align-items-center p-unreached">
+                <div class="barlow-condensed-medium">${r.title}</div>
+                <div class="barlow-condensed-medium">${r.progress * 100}%</div>
+              </div>
+            ${progress(r.progress || 0)}</div>
+          </div>`;
         })
         .join('');
     },

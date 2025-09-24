@@ -4,14 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Swift</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,31 +22,29 @@
     <main class="container my-4">
       <div class="d-flex justify-content-between align-items-center mb-3">
         <div>
-          <div class="h5 m-0">Olá, <span id="welcomeName">Ana</span> 👋</div>
+          <div class="h5 m-0">
+            Olá,
+            <span id="welcomeName">Ana</span>
+            👋
+          </div>
         </div>
         <div class="small" id="xpInfo">
-          XP do mês <span class="xp-red">980</span> | Total XP
+          XP do mês
+          <span class="xp-red">980</span>
+          | Total XP
           <span class="xp-red">10.236</span>
         </div>
       </div>
       <div class="row g-3 my-4 align-items-stretch">
         <div class="col-12 col-lg-8 d-flex flex-column">
-          <h2 class="barlow-condensed-bold text-uppercase mb-4">
-            Campanha do Mês
-          </h2>
+          <h2 class="barlow-condensed-bold text-uppercase mb-4">Campanha do Mês</h2>
           <div class="flex-grow-1" id="heroCampaign"></div>
         </div>
         <div class="col-12 col-lg-4 d-flex">
           <div class="card card-kpi flex-fill rounded-xl">
             <div class="card-body">
-              <div
-                class="text-card-top d-flex flex-column align-items-center justify-content-center"
-              >
-                <img
-                  class="mb-4"
-                  src="./assets/images/badge-star.svg"
-                  style="width: 50px"
-                />
+              <div class="text-card-top d-flex flex-column align-items-center justify-content-center">
+                <img class="mb-4" src="./assets/images/badge-star.svg" style="width: 50px" />
                 <div class="h6 mb-3">Resumo do mês</div>
                 <h4>Badge atual</h4>
                 <p class="fw-semibold xp-red">Vendedor do mês</p>
@@ -60,16 +52,20 @@
 
               <ul class="rank-list">
                 <li>
-                  <span>Progresso</span><span class="fw-semibold">70%</span>
+                  <span>Progresso</span>
+                  <span class="fw-semibold">70%</span>
                 </li>
-                <li><span>Ranking</span><span class="fw-semibold">#3</span></li>
+                <li>
+                  <span>Ranking</span>
+                  <span class="fw-semibold">#3</span>
+                </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
 
-      <div style="background: var(--brand)" class="p-4 rounded-xl">
+      <div style="background: var(--brand); margin-top: 100px;" class="p-4 rounded-xl">
         <div
           style="
             display: flex;
@@ -77,17 +73,8 @@
             align-items: center;
           "
         >
-          <div
-            style="color: white; font-weight: 700"
-            class="h2 mb-2 barlow-condensed-bold"
-          >
-            BADGES DO MÊS
-          </div>
-          <img
-            style="max-height: 60px"
-            src="assets/images/badge-star-dark-bg.svg"
-            alt=""
-          />
+          <div style="color: white; font-weight: 700" class="h2 mb-2 barlow-condensed-bold">BADGES DO MÊS</div>
+          <img style="max-height: 60px" src="assets/images/badge-star-dark-bg.svg" alt="" />
         </div>
 
         <!-- Linha com gradiente -->
@@ -109,9 +96,14 @@
         <div class="row g-3" id="badgesRow"></div>
       </div>
 
-      <div class="mt-4">
-        <div class="h5 mb-2">Recompensas do mês</div>
-        <div id="rewards"></div>
+      <div style="margin-top: 100px; padding-bottom: 70px;">
+        <div class="rewards-title d-flex align-items-center justify-content-between mb-1">
+          <div class="h2 barlow-condensed-bold text-uppercase">Recompensas do mês</div>
+          <img src="./assets/images/badge-trophy.svg" alt="icone troféu" style="max-width: 60px;" />
+        </div>
+        <hr class="hr-red" />
+
+        <div id="rewards" class="p-3"></div>
       </div>
     </main>
 
@@ -121,7 +113,6 @@
     <script src="assets/js/app.js"></script>
 
     <script>
-      // inject header partial
       fetch("partials/header.html")
         .then((r) => r.text())
         .then(

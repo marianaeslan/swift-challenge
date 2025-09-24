@@ -21,7 +21,7 @@ body {
   height: 100%;
 }
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   background: #fafafa;
   color: var(--text);
 }
@@ -29,26 +29,26 @@ body {
 /*Font Classes*/
 
 .barlow-condensed-medium {
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
 .barlow-condensed-bold {
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 700;
   font-style: normal;
 }
 
 .nunito-regular {
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
 
 .nunito-bold {
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-optical-sizing: auto;
   font-weight: 800;
   font-style: normal;
@@ -107,8 +107,30 @@ hr {
   border: none;
   height: 1px;
 }
+.hr-red {
+  background: linear-gradient(to right, var(--brand), var(--surface));
+  border: none;
+  height: 1px;
+}
 .xp-red {
   color: var(--brand) !important;
+}
+
+.bg-red-brand {
+  background-color: var(--brand);
+  color: var(--surface-2);
+}
+
+.p-reached {
+  font-size: 28px;
+}
+
+.p-unreached {
+  font-size: 20px;
+}
+
+.red-border {
+  border: 2px solid var(--brand);
 }
 
 .progress-bar {
