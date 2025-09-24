@@ -102,6 +102,11 @@ body {
 
 /* HomePage */
 
+hr {
+  background: linear-gradient(to right, var(--surface), var(--brand));
+  border: none;
+  height: 1px;
+}
 .xp-red {
   color: var(--brand) !important;
 }
