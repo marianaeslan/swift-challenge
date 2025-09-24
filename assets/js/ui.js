@@ -138,8 +138,8 @@
         .map((r) => {
           if (r.reached) {
             return `
-            <div class="card red-border mb-3 mt-2 rounded-xl p-3">
-              <div class="card-body d-flex justify-content-between align-items-center">
+            <div class="red-border mb-3 mt-2 rounded-xl p-4">
+              <div class="card-body card-reached d-flex justify-content-between align-items-center">
                 <div class="barlow-condensed-bold text-uppercase p-reached">
                   Desconto especial na loja
                 </div>
