@@ -46,7 +46,8 @@
             <div class="card card-kpi" style="height: 250px; border-radius: 16px;">
               <div class="card-body d-flex align-items-center" style="gap: 16px; flex-direction: column; justify-content: space-between">
                 <img src="${b.img}" alt="Badge" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
-                <div> ${
+                <div>
+                 ${
                 b.unlocked
                   ? ` 
                   <div style="text-align: center; margin-bottom: 0px" class="h4 mb-1">${b.title || 'Badge desbloqueado'}</div>
