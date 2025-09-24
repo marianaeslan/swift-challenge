@@ -44,14 +44,30 @@
           return `
           <div class="col-12 col-md-4 mb-3">
             <div class="card card-kpi" style="height: 250px; border-radius: 16px;">
-              <div class="card-body d-flex align-items-center" style="gap: 16px; flex-direction: column; justify-content: space-around">
+              <div class="card-body d-flex align-items-center" style="gap: 16px; flex-direction: column; justify-content: space-between">
                 <img src="${b.img}" alt="Badge" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
-                <div> 
-                <div style="text-align: center; margin-bottom: 0px" class="h6 mb-1">${b.title || 'Badge desbloqueado'}</div>
+                <div> ${
+                b.unlocked
+                  ? ` 
+                  <div style="text-align: center; margin-bottom: 0px" class="h4 mb-1">${b.title || 'Badge desbloqueado'}</div>
+                    <div>
+                    
+                    </div>`
+                  : `<div style="text-align: center; margin-bottom: 0px" class="h6 mb-1">${b.title || 'Badge desbloqueado'}</div>`
+              }
+                
+               
                   <div style="text-align: center; margin-top: 0px" class="h5 mb-1">${b.title2 || ''}</div> 
                 </div>
-                 
+                   ${
+                b.unlocked
+                  ? ` 
                   
+                    <div>
+                    
+                    </div>`
+                  : ''
+              }
                  ${
                 !b.unlocked
                   ? ` 
