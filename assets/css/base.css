@@ -141,6 +141,11 @@ hr {
   background-color: #ebebeb;
 }
 
+.space-s {
+  padding-top: 10vh;
+  padding-bottom: 6vh;
+}
+
 .card-kpi {
   border: 0;
   border-radius: var(--radius);
@@ -214,6 +219,11 @@ header.navbar {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+  }
+
+  .space-s {
+    padding-top: 4vh;
+    padding-bottom: 6vh;
   }
 
   .p-reached {
