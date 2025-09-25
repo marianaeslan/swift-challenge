@@ -184,6 +184,13 @@ hr {
   background: #f8fafc;
 }
 
+.outline-manager-btn {
+  transition: all 0.3s ease-in;
+}
+.outline-manager-btn:hover {
+  font-weight: 700;
+}
+
 header.navbar {
   box-shadow: var(--shadow);
 }

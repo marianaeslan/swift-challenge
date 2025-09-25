@@ -30,8 +30,8 @@
           </div>
           <div class="progress mb-2">
             <div class="progress-bar" role="progressbar"
-                style="width:${(data.progress/data.goal)*100}%"
-                aria-valuenow="${(data.progress/data.goal)*100}" aria-valuemin="0" aria-valuemax="100"></div>
+                style="width:${(data.progress / data.goal) * 100}%"
+                aria-valuenow="${(data.progress / data.goal) * 100}" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
           <div class="small">A meta de xp do mês é de <strong>${data.goal.toLocaleString('pt-BR')}xp</strong></div>
         </div>`;
@@ -118,7 +118,9 @@
         .join('');
     },
     renderRules(row, rules) {
-      row.innerHTML = rules.map(r => `
+      row.innerHTML = rules
+        .map(
+          (r) => `
         <div class="col-12 col-md-4">
           <article class="proto-desafio-card">
             <span class="proto-desafio-badge">Desafio</span>
@@ -126,18 +128,24 @@
             <p class="proto-desafio-date">Data final: ${r.due}</p>
           </article>
         </div>
-      `).join('');
+      `
+        )
+        .join('');
     },
     renderRanking(tbody, items) {
       tbody.parentElement.classList.add('table-collab');
-      tbody.innerHTML = items.map(i => `
+      tbody.innerHTML = items
+        .map(
+          (i) => `
         <tr>
           <td class="fw-semibold">${i.code}</td>
           <td>${i.name}</td>
           <td class="fw-semibold">${i.points}</td>
           <td>${i.sales}</td>
         </tr>
-      `).join('');
+      `
+        )
+        .join('');
     },
     renderRewards(container, list) {
       container.innerHTML = list
@@ -157,8 +165,8 @@
           <div class="card card-kpi mb-3 mt-2 p-2 rounded-xl bg-red-brand text">
             <div class="card-body">
               <div class="fw-bold mb-2 d-flex justify-content-between align-items-center p-unreached">
-                <div class="barlow-condensed-medium">${r.title}</div>
-                <div class="barlow-condensed-medium">${r.progress * 100}%</div>
+                <div class="nunito-regular">${r.title}</div>
+                <div class="nunito-regular">${r.progress * 100}%</div>
               </div>
             ${progress(r.progress || 0)}</div>
           </div>`;
