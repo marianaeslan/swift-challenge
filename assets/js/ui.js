@@ -99,21 +99,33 @@
       container.innerHTML = list
         .map(
           (s) =>
-            `<div class="col"><div class="card card-kpi"><div class="card-body"><div class="small text-muted">${s.date}</div><div class="fw-semibold">${s.title}</div><div class="text-success small mt-1">${s.xp}xp</div></div></div></div>`
+            `<div class="col">
+              <div class="card red-border rounded-xl px-3">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div class="small text-muted">${s.date}</div>
+                    <div class="small mt-1 nunito-bold" style="color: var(--progress);">${s.xp}xp</div>
+                  </div>
+                  <div class="fw-semibold">${s.title}</div>
+                </div>
+              </div>
+            </div>
+          `
         )
         .join('');
     },
     renderSalesTable(tbody, rows) {
       tbody.innerHTML = rows
         .map(
-          (r) => `<tr>
-        <td>${r.date}</td>
-        <td class="truncate">${r.product}</td>
-        <td class="text-center"><input class="form-check-input" type="checkbox" ${
-          r.cross ? 'checked' : ''
-        } disabled></td>
-        <td class="text-success">${r.xp}xp</td>
-      </tr>`
+          (r) => `
+          <tr>
+            <td>${r.date}</td>
+            <td class="truncate">${r.product}</td>
+            <td class="text-center"><input class="form-check-input" type="checkbox" ${
+              r.cross ? 'checked' : ''
+            } disabled></td>
+            <td class="nunito-bold" style="color: var(--progress);">${r.xp}xp</td>
+          </tr>`
         )
         .join('');
     },
