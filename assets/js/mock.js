@@ -10,12 +10,16 @@ window.Mock = {
       { title: 'NPS maior que 9 por duas semanas', due: '31/05/2025', badge: 'success' },
       { title: 'Manter ticket médio acima da meta por duas semanas', due: '31/05/2025', badge: 'success' },
     ],
-    trend: [12,18,10,22,15,28,20,16,24,19,27,21,30,26,25,33,29,24,28,23,31,22,26,20,27,24,30,28,33,37],
+    trend: [
+      12, 18, 10, 22, 15, 28, 20, 16, 24, 19, 27, 21, 30, 26, 25, 33, 29, 24, 28, 23, 31, 22, 26, 20, 27, 24, 30, 28,
+      33, 37,
+    ],
   },
   salesRecent: [
     { date: '02/05/2025', title: 'Alcatra 1kg, Farofa, Molho de Pimenta', xp: 15 },
     { date: '02/05/2025', title: 'Coca-cola 2L', xp: 10 },
     { date: '03/05/2025', title: 'Pack Heineken, Picanha, Coxa de frango', xp: 45 },
+    { date: '07/05/2025', title: ' Pão de Alho, Linguiça Toscana', xp: 55 },
   ],
   salesTable: [
     { date: '02/05/2025', product: 'Alcatra 1kg, Farofa, Molho de Pimenta', cross: true, xp: 15 },

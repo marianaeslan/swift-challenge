@@ -99,18 +99,17 @@
       container.innerHTML = list
         .map(
           (s) =>
-            `<div class="col">
-              <div class="card red-border rounded-xl px-3">
-                <div class="card-body">
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="small text-muted">${s.date}</div>
-                    <div class="small mt-1 nunito-bold" style="color: var(--progress);">${s.xp}xp</div>
+            `<div class="col-12 col-lg-3 d-flex flex-column">
+                <div class="card red-border rounded-xl px-3 flex-grow-1">
+                  <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="small text-muted">${s.date}</div>
+                      <div class="small mt-1 nunito-bold" style="color: var(--progress);">${s.xp}xp</div>
+                    </div>
+                    <div class="fw-semibold">${s.title}</div>
                   </div>
-                  <div class="fw-semibold">${s.title}</div>
                 </div>
-              </div>
-            </div>
-          `
+              </div>`
         )
         .join('');
     },
