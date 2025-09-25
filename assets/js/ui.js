@@ -22,16 +22,18 @@
     renderHeroCampaign(container, data) {
       container.innerHTML = `
         <div class="card-hero p-4 rounded-xl h-100">
-          <div class="h3 m-0 mb-3 text-uppercase barlow-condensed-bold">${data.month}</div>
-          <hr class="mb-4">
-          <div class="d-flex justify-content-between align-items-center mb-3">
+          <div class="h3 m-0 mb-1 text-uppercase barlow-condensed-bold ">${data.month}</div>
+          <hr class="mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-2">
             <div class="h6 mb-0">Seu progresso</div>
             <div class="fw-bold">${data.progress}xp</div>
           </div>
-          ${progress(data.progress / data.goal)}
-          <div class="mt-3 text-center">
-            <span class="small">A meta de xp do mês é de <strong>${data.goal.toLocaleString('pt-BR')}xp</strong></span>
+          <div class="progress mb-2">
+            <div class="progress-bar" role="progressbar"
+                style="width:${(data.progress/data.goal)*100}%"
+                aria-valuenow="${(data.progress/data.goal)*100}" aria-valuemin="0" aria-valuemax="100"></div>
           </div>
+          <div class="small">A meta de xp do mês é de <strong>${data.goal.toLocaleString('pt-BR')}xp</strong></div>
         </div>`;
     },
     renderBadges(row, items) {
@@ -116,22 +118,26 @@
         .join('');
     },
     renderRules(row, rules) {
-      row.innerHTML = rules
-        .map(
-          (r) =>
-            `<div class="col"><div class="card card-kpi"><div class="card-body d-flex align-items-center gap-2">${badgePill(
-              'Ativa',
-              'success'
-            )}<span class="fw-semibold">${r.title}</span><span class="ms-auto small text-muted">Até: ${
-              r.due
-            }</span></div></div></div>`
-        )
-        .join('');
+      row.innerHTML = rules.map(r => `
+        <div class="col-12 col-md-4">
+          <article class="proto-desafio-card">
+            <span class="proto-desafio-badge">Desafio</span>
+            <h3 class="proto-desafio-title">${r.title}</h3>
+            <p class="proto-desafio-date">Data final: ${r.due}</p>
+          </article>
+        </div>
+      `).join('');
     },
     renderRanking(tbody, items) {
-      tbody.innerHTML = items
-        .map((i) => `<tr><td>${i.code}</td><td>${i.name}</td><td>${i.points}</td><td>${i.sales}</td></tr>`)
-        .join('');
+      tbody.parentElement.classList.add('table-collab');
+      tbody.innerHTML = items.map(i => `
+        <tr>
+          <td class="fw-semibold">${i.code}</td>
+          <td>${i.name}</td>
+          <td class="fw-semibold">${i.points}</td>
+          <td>${i.sales}</td>
+        </tr>
+      `).join('');
     },
     renderRewards(container, list) {
       container.innerHTML = list

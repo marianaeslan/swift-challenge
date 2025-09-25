@@ -31,5 +31,58 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector("#rankingTable tbody"),
       Mock.ranking
     );
+    
+  if(page === 'gestor-home'){
+    UI.renderRules(document.getElementById('rulesRow'), Mock.campaign.rules);
+    UI.renderRanking(document.querySelector('#rankingTable tbody'), Mock.ranking);
+
+    // === Chart.js: linha da campanha ===
+    const ctx = document.getElementById('campaignChart');
+    if (ctx && window.Chart) {
+      const labels = Array.from({length: Mock.campaign.trend.length}, (_,i)=> i+1);
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [{
+            data: Mock.campaign.trend,
+            borderColor: getComputedStyle(document.documentElement)
+                          .getPropertyValue('--brand').trim() || '#D12E2E',
+            borderWidth: 3,
+            tension: 0,
+            pointRadius: 0,
+            pointHoverRadius: 3,
+            fill: false
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              displayColors: false,
+              callbacks: { title: (items)=> `Dia ${items[0].label}` }
+            }
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: { color: '#6B7280', maxTicksLimit: 8 }
+            },
+            y: {
+              beginAtZero: true,
+              grid: {
+                color: 'rgba(209,46,46,.15)',
+                drawBorder: false
+              },
+              ticks: { color: '#6B7280', maxTicksLimit: 6 }
+            }
+          },
+          elements: { line: { capBezierPoints: true } }
+        }
+      });
+      }
+    }
   }
 });
