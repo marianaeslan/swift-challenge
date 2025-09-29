@@ -7,6 +7,19 @@
 .card-hero .progress {
   background: rgb(237, 236, 236);
 }
+
+.hello-text {
+  font-size: clamp(1.2rem, 3vw, 2rem); 
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #000; /
+}
+#xpInfo {
+  font-size: clamp(1rem, 2.5vw, 1.6rem); 
+  font-weight: 500;
+  color: #333; 
+}
+
 .card {
   border: 2px solid #d32f2f; 
   border-radius: 12px;       
