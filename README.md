@@ -52,29 +52,6 @@ Plataforma de gamificação desenvolvida para motivar equipes de vendas através
   - Sistema de templates/partials
   - Mock data para desenvolvimento
 
-## 📁 Estrutura do Projeto
-
-```
-swift-gamification/
-├── assets/
-│   ├── css/
-│   │   ├── base.css          # Estilos base
-│   │   ├── components.css    # Componentes específicos
-│   │   └── utilities.css     # Classes utilitárias
-│   ├── images/              # Imagens e ícones
-│   └── js/
-│       ├── app.js          # Lógica principal
-│       ├── ui.js           # Componentes de interface
-│       └── mock.js         # Dados simulados
-├── partials/
-│   └── header.html         # Header compartilhado
-├── index.html              # Página principal
-├── colab-home.html         # Dashboard do colaborador
-├── colab-vendas.html       # Gestão de vendas
-├── gestor-home.html        # Dashboard do gestor
-└── login.html              # Página de login
-```
-
 ## 📊 Páginas Disponíveis
 
 | Página | Descrição | Arquivo |
@@ -96,9 +73,9 @@ O projeto utiliza uma paleta de cores específica e tipografia customizada:
 
 ## 👥 Autores
 
-- **Mariana Eslan** - [Link Github](https://github.com/marianaeslan)
 - **Lucas Felix** - [Link Github](https://github.com/strFelix)
-- **Gabriel** -
+- **Mariana Eslan** - [Link Github](https://github.com/marianaeslan)
+- **Gabriel** - [Link Github](https://github.com/gabrielforte03)
 
 ## 📄 Licença
 
