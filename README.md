@@ -94,37 +94,6 @@ O projeto utiliza uma paleta de cores específica e tipografia customizada:
 - **Componentes:** Cards, badges, barras de progresso
 - **Layout:** Grid responsivo com Bootstrap
 
-## 🔄 Status do Desenvolvimento
-
-- [x] Estrutura base do projeto
-- [x] Sistema de componentes UI
-- [x] Dashboard do colaborador
-- [x] Sistema de progresso e XP
-- [x] Layout responsivo
-- [ ] Integração com backend
-- [ ] Sistema de autenticação real
-- [ ] Dashboard do gestor
-
-## 🤝 Contribuindo
-
-Este é um projeto acadêmico, mas contribuições são bem-vindas:
-
-1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-funcionalidade`)
-3. Commit suas mudanças (`git commit -m 'feat: add nova funcionalidade'`)
-4. Push para a branch (`git push origin feature/nova-funcionalidade`)
-5. Abra um Pull Request
-
-## 📝 Padrões de Commit
-
-Utilizamos [Conventional Commits](https://www.conventionalcommits.org/):
-
-- `feat:` nova funcionalidade
-- `fix:` correção de bug
-- `style:` mudanças de estilo/formatação
-- `refactor:` refatoração de código
-- `docs:` mudanças na documentação
-
 ## 👥 Autores
 
 - **Mariana Eslan** - [Link Github](https://github.com/marianaeslan)

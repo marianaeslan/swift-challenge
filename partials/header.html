@@ -1,36 +1,47 @@
-<nav class="navbar navbar-expand-lg" style="background: var(--brand)">
+<nav class="navbar navbar-expand-lg navbar-dark" style="background: var(--brand);">
   <div class="container">
-    <a class="navbar-brand fw-bold brand-text" style="color: white !important" href="#">
-      <img src="../assets/images/logo-swift.svg" alt="" style="max-height: 20px" />
+
+    <!-- 1) Logo fixo à esquerda -->
+    <a class="navbar-brand fw-bold brand-text order-0" href="#">
+      <img src="../assets/images/logo-swift.svg" alt="" style="max-height:20px" />
     </a>
 
-    <div class="d-flex align-items-center order-lg-2 ms-3">
-      <span class="badge badge-soft rounded-pill p-0" id="badgeContainer">
-        <img src="https://i.pravatar.cc/80?u=" alt="Foto do Usuário" style="
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            object-fit: cover;
-          " />
-      </span>
+    <!-- 2) Bloco da direita (hambúrguer + avatar) — permanece na 1ª linha -->
+    <div class="d-flex align-items-center ms-auto gap-2 order-1 order-lg-3">
+      <!-- botão hambúrguer (controla o collapse) -->
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#nav"
+              aria-controls="nav" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- avatar com dropdown -->
+      <div class="dropdown">
+        <a href="#" id="profileDropdown" class="d-flex align-items-center" role="button"
+           data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://i.pravatar.cc/85?u=" alt="Foto do Usuário"
+               style="width:40px;height:40px;border-radius:50%;border:2px solid #fff;object-fit:cover;" />
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="profileDropdown">
+          <li>
+            <a class="dropdown-item text-danger fw-semibold" href="login.html">
+              <i class="bi bi-box-arrow-right me-2"></i>Sair
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse order-lg-1" id="nav">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
+    <!-- 3) Menu colapsável -->
+    <!--  - no mobile: w-100 + order-3 => quebra para linha de baixo
+         - no desktop: order-lg-1 + w-lg-auto => volta para o meio, antes do avatar -->
+    <div class="collapse navbar-collapse w-100 order-3 order-lg-1 w-lg-auto ms-lg-3" id="nav">
+      <ul class="navbar-nav ms-auto align-items-lg-center" id="navLinks">
         <li class="nav-item">
-          <a class="nav-link" style="color: white" href="colab-home.html">
-            Home
-          </a>
+          <a class="nav-link" style="color:white" href="colab-home.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" style="color: white" href="colab-vendas.html">
-            Minhas vendas
-          </a>
+          <a class="nav-link" style="color:white" href="colab-vendas.html">Minhas vendas</a>
         </li>
       </ul>
     </div>
@@ -54,5 +65,17 @@
   .nav-link:hover {
     font-weight: 800;
     text-decoration: underline;
+  }
+
+  .dropdown-menu {
+    border-radius: 12px;
+    padding: .5rem 0;
+  }
+  .dropdown-item {
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+  }
+  .dropdown-item:hover {
+    background-color: rgba(209, 46, 46, 0.08);
   }
 </style>
