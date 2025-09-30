@@ -35,9 +35,9 @@ window.Mock = {
     { code: '01111', name: 'Claudio Rios', points: 210, sales: 7 },
   ],
   badges: [
-    { title: 'Badge desbloqueado', unlocked: true, progress: 1, img: 'assets/images/badge-money.svg', title2: '' },
-    { title: 'Próxima badge:', progress: 0.75, img: 'assets/images/badge-horse.svg', title2: 'MELHOR NPS' },
-    { title: 'Próxima badge:', progress: 0.2, img: 'assets/images/badge-target.svg', title2: 'MAIOR PONTUAÇÃO DO MÊS' },
+    { title: 'Badge desbloqueado', unlocked: true, progress: 1, img: '../assets/images/badge-money.svg', title2: '' },
+    { title: 'Próxima badge:', progress: 0.75, img: '../assets/images/badge-horse.svg', title2: 'MELHOR NPS' },
+    { title: 'Próxima badge:', progress: 0.2, img: '../assets/images/badge-target.svg', title2: 'MAIOR PONTUAÇÃO DO MÊS' },
   ],
   rewards: [
     { title: 'Desconto especial na loja', reached: true },
