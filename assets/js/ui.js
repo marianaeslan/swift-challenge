@@ -42,7 +42,7 @@
           const pct = Math.round((b.progress || 0) * 100);
           return `
           <div class="col-12 col-md-4 mb-3">
-            <div class="card card-kpi p-2" style="height: 250px; border-radius: 16px;">
+            <div class="card card-kpi p-2" style="height: 100%; border-radius: 16px;">
               <div class="card-body d-flex align-items-center" style="gap: 16px; flex-direction: column; justify-content: space-between">
                 <img src="${
                   b.img

@@ -1,3 +1,8 @@
+.button-login-gestor {
+  top: 1rem;
+  right: 1rem;
+}
+
 .card-hero {
   background: var(--brand);
   color: #fff;
