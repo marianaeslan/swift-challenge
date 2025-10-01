@@ -75,7 +75,7 @@ O projeto utiliza uma paleta de cores específica e tipografia customizada:
 
 - **Lucas Felix** - [Link Github](https://github.com/strFelix)
 - **Mariana Eslan** - [Link Github](https://github.com/marianaeslan)
-- **Gabriel** - [Link Github](https://github.com/gabrielforte03)
+- **Gabriel Forte** - [Link Github](https://github.com/gabrielforte03)
 
 ## 📄 Licença
 
